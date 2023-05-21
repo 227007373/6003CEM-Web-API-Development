@@ -24,7 +24,7 @@ const MyHeader = () => {
                         <Link href={'/login'}>Login</Link>
                     </div>
                     <div className={styles.btn}>
-                        <Link href={'/login'}>Register</Link>
+                        <Link href={'/register'}>Register</Link>
                     </div>
                 </nav>
             </div>
