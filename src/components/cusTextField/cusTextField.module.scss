@@ -1,0 +1,29 @@
+.fieldwrapper {
+    width: 100%;
+    &:not(:last-child) {
+        margin-bottom: 24px;
+    }
+    .errorMsg {
+        margin-top: 4px;
+        color: #d32f2f;
+    }
+    :global(.MuiFormControl-root) {
+        width: 100%;
+    }
+    :global(.MuiOutlinedInput-notchedOutline) {
+        border: 1px solid;
+        border-radius: 0;
+    }
+    :global(.MuiInputBase-input) {
+        color: #333;
+        font-family: 'Roboto Mono';
+    }
+    :global(.MuiFormLabel-root) {
+        color: #333;
+        font-family: 'Roboto Mono';
+        background-color: #fff;
+        padding-right: px;
+    }
+}
+.field {
+}
