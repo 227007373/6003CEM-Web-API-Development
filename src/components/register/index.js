@@ -51,7 +51,7 @@ const Register = () => {
             setError(temp);
         } else {
             setError(temp);
-            axios('http://192.168.1.21:3000/api/user/register', {
+            axios(`${process.env.NEXT_PUBLIC_BASEURL}/user/register`, {
                 method: 'POST',
                 data: {
                     username: form.username,

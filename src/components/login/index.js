@@ -33,7 +33,7 @@ const Login = () => {
             setError(temp);
         } else {
             setError(temp);
-            axios('http://192.168.1.21:3000/api/user/login', {
+            axios(`${process.env.NEXT_PUBLIC_BASEURL}/user/login`, {
                 method: 'POST',
                 data: {
                     username: form.username,
@@ -48,7 +48,7 @@ const Login = () => {
                     router.push('/');
                 })
                 .catch((err) => {
-                    console.log(err.response.data.message);
+                    console.log(err);
                     if (err.response.data.message == 'Username or password is incorrect') {
                         setError(['worngInformation']);
                     }

@@ -1,0 +1,18 @@
+.nav {
+    border-bottom: 1px solid #333;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    display: flex;
+    .searchBar {
+        border: 1px solid;
+        // margin-left: auto;
+        :global(.MuiInputBase-input) {
+            opacity: 1;
+            color: #333;
+            font-family: 'Roboto Mono';
+            &::placeholder {
+                opacity: 0.85;
+            }
+        }
+    }
+}

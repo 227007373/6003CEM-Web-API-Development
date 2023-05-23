@@ -22,7 +22,7 @@ const MyHeader = () => {
                         <Link href={'/'}>Contact Us</Link>
                     </div>
                     <div className={styles.btn}>
-                        <Link href={'/'}>Browse</Link>
+                        <Link href={'/cats'}>Cats</Link>
                     </div>
                     {user?.token.length == 0 ? (
                         <>
