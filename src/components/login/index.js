@@ -42,7 +42,7 @@ const Login = () => {
             })
                 .then((res) => {
                     localStorage.setItem('jwt', res.data.data.token);
-                    setUser({ token: res.data.data.token });
+                    setUser({ token: res.data.data.token, isStaff: res.data.data.isStaff });
                 })
                 .then(() => {
                     router.push('/');

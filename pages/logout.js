@@ -10,7 +10,7 @@ const Logout = () => {
         })
             .then(() => {
                 window.localStorage.setItem('jwt', '');
-                setUser({ token: '' });
+                setUser({ token: '', isStaff: false });
             })
             .then(() => {
                 router.push('/');

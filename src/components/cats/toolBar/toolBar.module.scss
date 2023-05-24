@@ -1,11 +1,27 @@
 .nav {
+    * {
+        font-family: 'Roboto Mono';
+    }
     border-bottom: 1px solid #333;
     padding-bottom: 24px;
     margin-bottom: 24px;
+    align-items: stretch;
     display: flex;
+    :global(.MuiOutlinedInput-notchedOutline) {
+        border: 1px solid #333;
+        border-radius: 0;
+    }
+    :global(.MuiSelect-select) {
+        padding: initial;
+        padding-left: 8px;
+        padding-right: 8px;
+        input {
+        }
+    }
     .searchBar {
-        border: 1px solid;
-        // margin-left: auto;
+        border: 1px solid #333;
+        margin-left: auto;
+
         :global(.MuiInputBase-input) {
             opacity: 1;
             color: #333;
