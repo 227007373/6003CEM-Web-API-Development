@@ -7,6 +7,12 @@
         padding-bottom: 65%;
         background-color: pink;
         margin-bottom: 12px;
+        position: relative;
+        .fav {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
     }
     > div {
         display: flex;
