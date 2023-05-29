@@ -1,25 +1,21 @@
 import Layout from '@/components/layout';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { UserContext } from '@/contexts/user.context';
 import axios from 'axios';
-import Cats from '@/components/cats';
-const CatsPage = () => {
+import Favs from '@/components/fav';
+const MyFavouritePage = () => {
     const [cats, setCats] = useState([]);
+    const { user, setUser } = useContext(UserContext);
     let render = () => {
-        axios(`${process.env.NEXT_PUBLIC_BASEURL}/cat/list`, {
-            method: 'GET',
-        })
-            .then((res) => {
-                setCats(res.data);
-            })
-            .catch((err) => {});
+        setCats(user.favourite);
     };
     useEffect(() => {
         render();
-    }, []);
+    }, [user]);
 
     return (
         <Layout>
-            <Cats
+            <Favs
                 data={cats}
                 setData={(e) => {
                     setCats(e);
@@ -29,4 +25,4 @@ const CatsPage = () => {
         </Layout>
     );
 };
-export default CatsPage;
+export default MyFavouritePage;

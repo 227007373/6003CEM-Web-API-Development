@@ -10,14 +10,10 @@
         padding-left: 8px;
         padding-right: 8px;
         flex: 0 0 25%;
-    }
-    .wrapper {
         .image {
             width: 100%;
             padding-bottom: 65%;
             border: 1px dashed #333;
-            background-size: cover;
-            background-position: center;
             margin-bottom: 12px;
             position: relative;
             .fav,
@@ -35,33 +31,6 @@
             }
             > span {
             }
-            .choice {
-                &.error {
-                    border: 1px solid #d32f2f;
-                    border-radius: 4px;
-                }
-                display: flex;
-                align-items: center;
-                > div {
-                    cursor: pointer;
-                    &:hover {
-                        opacity: 0.6;
-                    }
-                    &.active {
-                        color: #1976d2;
-                        font-weight: bold;
-                    }
-                }
-            }
-        }
-    }
-    .tools {
-        margin-top: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        button {
-            border: 1px solid #333;
         }
     }
 }

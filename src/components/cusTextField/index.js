@@ -1,6 +1,6 @@
 import styles from './cusTextField.module.scss';
 import { TextField } from '@mui/material';
-const CusTextField = ({ label, name, value, onChange, error, errorMsg }) => {
+const CusTextField = ({ label, name, value, onChange, error, errormsg }) => {
     return (
         <div className={styles.fieldwrapper}>
             <TextField
@@ -11,7 +11,7 @@ const CusTextField = ({ label, name, value, onChange, error, errorMsg }) => {
                 onChange={onChange}
                 error={error}
             />
-            {error ? <div className={styles.errorMsg}>{errorMsg}</div> : null}
+            {error ? <div className={styles.errormsg}>{errormsg}</div> : null}
         </div>
     );
 };

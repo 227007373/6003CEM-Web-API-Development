@@ -26,8 +26,32 @@
         position: absolute;
         bottom: 0;
         left: 24px;
+        right: 24px;
         transform: translateY(50%);
-        padding: 20px;
-        background-color: #ffffff;
+        display: flex;
+        justify-content: space-between;
+        button {
+            background-color: white;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+        .staffCode {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            padding-left: 24px;
+            padding-right: 24px;
+            :global(.MuiOutlinedInput-notchedOutline) {
+                border: 1px solid #333;
+                border-radius: 0;
+            }
+            :global(.MuiInputBase-root) {
+                margin-left: 12px;
+                width: 80px;
+            }
+            input {
+                padding: 8px;
+            }
+        }
     }
 }

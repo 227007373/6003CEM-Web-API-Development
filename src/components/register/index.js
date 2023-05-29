@@ -9,6 +9,7 @@ const Register = () => {
         username: '',
         password: '',
         confirmPassword: '',
+        code: '',
     });
     const router = useRouter();
     const [error, setError] = useState([]);
@@ -56,6 +57,7 @@ const Register = () => {
                 data: {
                     username: form.username,
                     password: form.password,
+                    staffCode: form.code,
                 },
             })
                 .then((res) => {
@@ -85,7 +87,7 @@ const Register = () => {
                                 error.includes('usernameTooShort') ||
                                 error.includes('usernameExists')
                             }
-                            errorMsg={
+                            errormsg={
                                 error.includes('emptyUsername')
                                     ? 'this field is required'
                                     : error.includes('usernameTooShort')
@@ -101,7 +103,7 @@ const Register = () => {
                             value={form.password}
                             onChange={onChange}
                             error={error.includes('emptyPassword') || error.includes('passwordNotSecured')}
-                            errorMsg={
+                            errormsg={
                                 error.includes('emptyPassword')
                                     ? 'this field is required'
                                     : error.includes('passwordNotSecured')
@@ -116,7 +118,7 @@ const Register = () => {
                             value={form.confirmPassword}
                             onChange={onChange}
                             error={error.includes('emptyConfirmPassword') || error.includes('wrongConfirm')}
-                            errorMsg={
+                            errormsg={
                                 error.includes('emptyConfirmPassword')
                                     ? 'this field is required'
                                     : error.includes('wrongConfirm')
@@ -129,6 +131,14 @@ const Register = () => {
                 {!success ? (
                     <div className={styles.submitBtn}>
                         <button onClick={register}>Register</button>
+                        <div className={styles.staffCode}>
+                            <div>Staff code:</div>
+                            <TextField
+                                name={'code'}
+                                value={form.code}
+                                onChange={onChange}
+                            />
+                        </div>
                     </div>
                 ) : (
                     <div className={styles.submitBtn}>

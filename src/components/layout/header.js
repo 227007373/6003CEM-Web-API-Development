@@ -5,6 +5,7 @@ import { UserContext } from '@/contexts/user.context';
 const MyHeader = () => {
     const { user, setUser } = useContext(UserContext);
     const [loggedin, setLoggedin] = useState(null);
+
     return (
         <header>
             <div className={`${styles.wrapper} container`}>
@@ -15,12 +16,11 @@ const MyHeader = () => {
                     ></div>
                 </div>
                 <nav className={styles.nav}>
-                    <div className={styles.btn}>
-                        <Link href={'/'}>My Favourite</Link>
-                    </div>
-                    <div className={styles.btn}>
-                        <Link href={'/'}>Contact Us</Link>
-                    </div>
+                    {!user.isStaff ? (
+                        <div className={styles.btn}>
+                            <Link href={'/my-favourite'}>My Favourite</Link>
+                        </div>
+                    ) : null}
                     <div className={styles.btn}>
                         <Link href={'/cats'}>Cats</Link>
                     </div>

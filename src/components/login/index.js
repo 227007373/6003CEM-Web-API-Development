@@ -42,6 +42,7 @@ const Login = () => {
             })
                 .then((res) => {
                     localStorage.setItem('jwt', res.data.data.token);
+                    console.log(res);
                     setUser({
                         username: res.data.data.username,
                         token: res.data.data.token,
@@ -54,7 +55,7 @@ const Login = () => {
                 })
                 .catch((err) => {
                     console.log(err);
-                    if (err.response.data.message == 'Username or password is incorrect') {
+                    if (err.response?.data.message == 'Username or password is incorrect') {
                         setError(['worngInformation']);
                     }
                 });
@@ -70,7 +71,7 @@ const Login = () => {
                         value={form.username}
                         onChange={onChange}
                         error={error.includes('emptyUsername') || error.includes('worngInformation')}
-                        errorMsg={error.includes('emptyUsername') ? 'this field is required' : ''}
+                        errormsg={error.includes('emptyUsername') ? 'this field is required' : ''}
                     />
                     <CusTextField
                         label='Password'
@@ -78,7 +79,7 @@ const Login = () => {
                         value={form.password}
                         onChange={onChange}
                         error={error.includes('emptyPassword') || error.includes('worngInformation')}
-                        errorMsg={
+                        errormsg={
                             error.includes('emptyPassword')
                                 ? 'this field is required'
                                 : error.includes('worngInformation')
