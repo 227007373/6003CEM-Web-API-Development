@@ -22,7 +22,7 @@ const MyHeader = () => {
                         </div>
                     ) : null}
                     <div className={styles.btn}>
-                        <Link href={'/cats'}>Cats</Link>
+                        <Link href={'/'}>Cats</Link>
                     </div>
                     {user?.token.length == 0 ? (
                         <>
