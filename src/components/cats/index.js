@@ -53,9 +53,7 @@ const Cats = ({ data, setData, updateData }) => {
                 .then((res) => {
                     updateData();
                 })
-                .catch((err) => {
-                    console.log(err);
-                });
+                .catch((err) => {});
         }
     };
 

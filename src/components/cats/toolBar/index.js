@@ -76,9 +76,7 @@ const ToolBar = ({ setData }) => {
                             .then((res) => {
                                 setData(res.data.data);
                             })
-                            .catch((err) => {
-                                console.log(err);
-                            });
+                            .catch((err) => {});
                     }}
                     value={breeds}
                 >
@@ -115,9 +113,7 @@ const ToolBar = ({ setData }) => {
                             .then((res) => {
                                 setData(res.data.data);
                             })
-                            .catch((err) => {
-                                console.log(err);
-                            });
+                            .catch((err) => {});
                     }}
                     value={gender}
                 >

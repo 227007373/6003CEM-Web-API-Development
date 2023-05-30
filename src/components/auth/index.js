@@ -20,7 +20,6 @@ const Auth = ({ children }) => {
                     });
                 })
                 .catch((err) => {
-                    console.log(err);
                     router.push('/logout');
                 });
             router.pathname == '/login' || router.pathname == '/register' ? router.push('/') : null;

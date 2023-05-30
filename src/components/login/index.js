@@ -42,7 +42,6 @@ const Login = () => {
             })
                 .then((res) => {
                     localStorage.setItem('jwt', res.data.data.token);
-                    console.log(res);
                     setUser({
                         username: res.data.data.username,
                         token: res.data.data.token,
@@ -54,7 +53,6 @@ const Login = () => {
                     router.push('/');
                 })
                 .catch((err) => {
-                    console.log(err);
                     if (err.response?.data.message == 'Username or password is incorrect') {
                         setError(['worngInformation']);
                     }

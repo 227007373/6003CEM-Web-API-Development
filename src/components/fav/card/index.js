@@ -23,7 +23,6 @@ const Card = ({ e, staff }) => {
             data: { username: user.username, id: e._id },
         })
             .then((res) => {
-                console.log(res);
                 setLiked(res.data.data.liked);
             })
             .then(() => {
@@ -38,13 +37,9 @@ const Card = ({ e, staff }) => {
                             return { token: window.localStorage.getItem('jwt'), ...res.data.data };
                         });
                     })
-                    .catch((err) => {
-                        console.log(err);
-                    });
+                    .catch((err) => {});
             })
-            .catch((err) => {
-                console.log(err);
-            });
+            .catch((err) => {});
     };
 
     return (

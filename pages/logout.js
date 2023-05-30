@@ -16,6 +16,5 @@ const Logout = () => {
                 router.push('/');
             });
     }, []);
-    console.log(user);
 };
 export default Logout;

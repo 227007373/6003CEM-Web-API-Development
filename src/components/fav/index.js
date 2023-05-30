@@ -49,12 +49,9 @@ const Favs = ({ data, setData, updateData }) => {
                 headers: { Authorization: `Bearer ${user.token}` },
             })
                 .then((res) => {
-                    console.log(res);
                     updateData();
                 })
-                .catch((err) => {
-                    console.log(err);
-                });
+                .catch((err) => {});
         }
     };
 

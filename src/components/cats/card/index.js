@@ -45,7 +45,6 @@ const Card = ({ e, staff, updateData }) => {
             data: { username: user.username, id: e._id },
         })
             .then((res) => {
-                console.log(res);
                 setLiked(res.data.data.liked);
             })
             .then(() => {
@@ -56,19 +55,15 @@ const Card = ({ e, staff, updateData }) => {
                     },
                 })
                     .then((res) => {
-                        console.log(res);
                         setUser((p) => {
                             return { token: window.localStorage.getItem('jwt'), ...res.data.data };
                         });
                     })
                     .catch((err) => {
-                        console.log(err);
                         router.push('/logout');
                     });
             })
-            .catch((err) => {
-                console.log(err);
-            });
+            .catch((err) => {});
     };
     const del = () => {
         axios(`${process.env.NEXT_PUBLIC_BASEURL}/cat/delete`, {
@@ -78,15 +73,11 @@ const Card = ({ e, staff, updateData }) => {
             },
             headers: { Authorization: `Bearer ${user.token}` },
         })
-            .then((res) => {
-                console.log(res);
-            })
+            .then((res) => {})
             .then(() => {
                 updateData();
             })
-            .catch((err) => {
-                console.log(err);
-            });
+            .catch((err) => {});
     };
     const save = () => {
         axios(`${process.env.NEXT_PUBLIC_BASEURL}/cat/update/${e._id}`, {
@@ -94,18 +85,14 @@ const Card = ({ e, staff, updateData }) => {
             data: form,
             headers: { Authorization: `Bearer ${user.token}` },
         })
-            .then((res) => {
-                console.log(res);
-            })
+            .then((res) => {})
             .then(() => {
                 updateData();
             })
             .then(() => {
                 setEditing(false);
             })
-            .catch((err) => {
-                console.log(err);
-            });
+            .catch((err) => {});
     };
     return (
         <div className={styles.cat}>

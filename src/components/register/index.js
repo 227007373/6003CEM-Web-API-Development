@@ -65,7 +65,6 @@ const Register = () => {
                     setSuccess(true);
                 })
                 .catch((err) => {
-                    console.log(err);
                     if (err.response.data.message == 'Username already exists.') {
                         setError(['usernameExists']);
                     }
